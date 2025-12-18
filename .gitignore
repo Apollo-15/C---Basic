@@ -44,3 +44,9 @@ Thumbs.db
 # Logs
 # =========================
 *.log
+
+# =========================
+# Lesson 2
+# =========================
+Lesson 2 - Data Types/DataTypes/.vscode/launch.json
+Lesson 2 - Data Types/DataTypes/.vscode/tasks.json
