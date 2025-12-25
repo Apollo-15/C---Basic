@@ -1,0 +1,53 @@
+# =========================
+# VS Code
+# =========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/c_cpp_properties.json
+
+# =========================
+# Build / Output
+# =========================
+build/
+output/
+bin/
+obj/
+
+# =========================
+# Compiled files
+# =========================
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.a
+*.lib
+*.d
+
+# =========================
+# Make / CMake
+# =========================
+Makefile.user
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*/
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Lesson 2
+# =========================
+Lesson 2 - Data Types/DataTypes/.vscode/launch.json
+Lesson 2 - Data Types/DataTypes/.vscode/tasks.json
