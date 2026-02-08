@@ -7,8 +7,8 @@ private:
 	{
 		int iKey = 0;
 
-		Node* pLeft = nullptr;//smaller
-		Node* pRight = nullptr;//bigger
+		Node* pLeft = nullptr; // smaller
+		Node* pRight = nullptr; // bigger
 	};
 
 	Node* m_pRoot = nullptr;
