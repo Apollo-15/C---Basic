@@ -19,6 +19,8 @@ private:
 	bool CheckKey(const Node* const node, const int iKey) const;
 	bool AddExistedNode(Node*& node, Node*& nodeForAdd);
 	void DeleteNode(Node*& node, const int iKey);
+	void ClearAll(Node*& node);
+
 public:
 	CSet() {};
 	CSet(const CSet& obj) = delete;
@@ -27,7 +29,6 @@ public:
 	void Add(const int iKey);
 	void Delete(const int iKey);
 	bool IsExist(const int iKey) const;
-
 	void ClearAll();
 
 	void PrintTree() const;
@@ -46,16 +47,31 @@ int main()
 	s.Add(102);
 	s.Add(102);
 
+	std::cout << "=====================" << "\n";
 	s.PrintTree();
 	std::cout << "\n";
 	std::cout << s.IsExist(77) << "\n";
 	std::cout << s.IsExist(1000) << "\n";
 	std::cout << "\n";
 
+	std::cout << "=====================" << "\n";
 	s.Delete(22222);
 	s.Delete(-2);
 	s.Delete(1000);
 	s.PrintTree();
+
+	std::cout << "=====================" << "\n";
+	std::cout << "Tree before cleaning: " << "\n";
+	s.PrintTree();
+	std::cout << "Tree After cleaning: " << "\n";
+	s.ClearAll();
+	s.PrintTree();
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "\n";
+	std::cout << "Well, y'all can see there's nothin' left here :D" << "\n";
+
+	std::cin.get();
 
 	return 0;
 }
@@ -200,7 +216,23 @@ bool CSet::AddExistedNode(Node*& node, Node*& nodeForAdd)
 	return false;
 }
 
+void CSet::ClearAll(Node*& node)
+{
+	if (node == nullptr)
+	{
+		return;
+	}
+
+	ClearAll(node->pRight);
+	ClearAll(node->pLeft);
+
+	delete(node);
+
+	node = nullptr;
+}
+
 void CSet::ClearAll()
 {
-
+	ClearAll(m_pRoot);
+	m_uiSize = 0;
 }
